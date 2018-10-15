@@ -1,0 +1,1366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" 
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+    xmlns:tns="https://ns1.hosttech.eu/soap" 
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" 
+    xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" name="API" targetNamespace="https://ns1.hosttech.eu/soap">
+    <types>
+        <xsd:schema targetNamespace="https://ns1.hosttech.eu/soap">
+            <xsd:complexType name="TemplateRecordA">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="template" type="tns:Template" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="ipv4" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfTemplateRecordA">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:TemplateRecordA[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TemplateRecordAAAA">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="template" type="tns:Template" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="ipv6" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfTemplateRecordAAAA">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:TemplateRecordAAAA[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TemplateRecordCNAME">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="template" type="tns:Template" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="cname" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfTemplateRecordCNAME">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:TemplateRecordCNAME[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TemplateRecordMX">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="template" type="tns:Template" nillable="true"/>
+                    <xsd:element name="ownername" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="pref" type="xsd:string" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfTemplateRecordMX">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:TemplateRecordMX[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TemplateRecordPTR">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="template" type="tns:Template" nillable="true"/>
+                    <xsd:element name="origin" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfTemplateRecordPTR">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:TemplateRecordPTR[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TemplateRecordSPF">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="template" type="tns:Template" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="text" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfTemplateRecordSPF">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:TemplateRecordSPF[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TemplateRecordSRV">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="template" type="tns:Template" nillable="true"/>
+                    <xsd:element name="service" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="priority" type="xsd:string" nillable="true"/>
+                    <xsd:element name="weight" type="xsd:string" nillable="true"/>
+                    <xsd:element name="port" type="xsd:int" nillable="true"/>
+                    <xsd:element name="target" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfTemplateRecordSRV">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:TemplateRecordSRV[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TemplateRecordTXT">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="template" type="tns:Template" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="text" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfTemplateRecordTXT">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:TemplateRecordTXT[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TemplateRecordNS">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="template" type="tns:Template" nillable="true"/>
+                    <xsd:element name="ownername" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="targetname" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfTemplateRecordNS">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:TemplateRecordNS[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Template">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="email" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="nameserver" type="xsd:string" nillable="true"/>
+                    <xsd:element name="recordsa" type="tns:ArrayOfTemplateRecordA"/>
+                    <xsd:element name="recordsaaaa" type="tns:ArrayOfTemplateRecordAAAA"/>
+                    <xsd:element name="recordscname" type="tns:ArrayOfTemplateRecordCNAME"/>
+                    <xsd:element name="recordsmx" type="tns:ArrayOfTemplateRecordMX"/>
+                    <xsd:element name="recordsptr" type="tns:ArrayOfTemplateRecordPTR"/>
+                    <xsd:element name="recordsspf" type="tns:ArrayOfTemplateRecordSPF"/>
+                    <xsd:element name="recordssrv" type="tns:ArrayOfTemplateRecordSRV"/>
+                    <xsd:element name="recordstxt" type="tns:ArrayOfTemplateRecordTXT"/>
+                    <xsd:element name="recordsns" type="tns:ArrayOfTemplateRecordNS"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ZoneRecordA">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="zone" type="tns:Zone" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="ipv4" type="xsd:string" nillable="true"/>
+                    <xsd:element name="validFrom" type="xsd:int" nillable="true"/>
+                    <xsd:element name="validUntil" type="xsd:int" nillable="true"/>
+                    <xsd:element name="futureRecord" type="tns:ZoneRecordA" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfZoneRecordA">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:ZoneRecordA[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ZoneRecordAAAA">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="zone" type="tns:Zone" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="ipv6" type="xsd:string" nillable="true"/>
+                    <xsd:element name="validFrom" type="xsd:int" nillable="true"/>
+                    <xsd:element name="validUntil" type="xsd:int" nillable="true"/>
+                    <xsd:element name="futureRecord" type="tns:ZoneRecordAAAA" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfZoneRecordAAAA">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:ZoneRecordAAAA[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ZoneRecordCNAME">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="zone" type="tns:Zone" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="cname" type="xsd:string" nillable="true"/>
+                    <xsd:element name="validFrom" type="xsd:int" nillable="true"/>
+                    <xsd:element name="validUntil" type="xsd:int" nillable="true"/>
+                    <xsd:element name="futureRecord" type="tns:ZoneRecordCNAME" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfZoneRecordCNAME">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:ZoneRecordCNAME[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ZoneRecordMX">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="zone" type="tns:Zone" nillable="true"/>
+                    <xsd:element name="ownername" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="pref" type="xsd:int" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="validFrom" type="xsd:int" nillable="true"/>
+                    <xsd:element name="validUntil" type="xsd:int" nillable="true"/>
+                    <xsd:element name="futureRecord" type="tns:ZoneRecordMX" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfZoneRecordMX">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:ZoneRecordMX[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ZoneRecordPTR">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="zone" type="tns:Zone" nillable="true"/>
+                    <xsd:element name="origin" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="validFrom" type="xsd:int" nillable="true"/>
+                    <xsd:element name="validUntil" type="xsd:int" nillable="true"/>
+                    <xsd:element name="futureRecord" type="tns:ZoneRecordPTR" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfZoneRecordPTR">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:ZoneRecordPTR[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ZoneRecordSPF">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="zone" type="tns:Zone" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="text" type="xsd:string" nillable="true"/>
+                    <xsd:element name="validFrom" type="xsd:int" nillable="true"/>
+                    <xsd:element name="validUntil" type="xsd:int" nillable="true"/>
+                    <xsd:element name="futureRecord" type="tns:ZoneRecordSPF" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfZoneRecordSPF">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:ZoneRecordSPF[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ZoneRecordSRV">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="zone" type="tns:Zone" nillable="true"/>
+                    <xsd:element name="service" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="priority" type="xsd:int" nillable="true"/>
+                    <xsd:element name="weight" type="xsd:int" nillable="true"/>
+                    <xsd:element name="port" type="xsd:int" nillable="true"/>
+                    <xsd:element name="target" type="xsd:string" nillable="true"/>
+                    <xsd:element name="validFrom" type="xsd:int" nillable="true"/>
+                    <xsd:element name="validUntil" type="xsd:int" nillable="true"/>
+                    <xsd:element name="futureRecord" type="tns:ZoneRecordSRV" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfZoneRecordSRV">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:ZoneRecordSRV[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ZoneRecordTXT">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="zone" type="tns:Zone" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="text" type="xsd:string" nillable="true"/>
+                    <xsd:element name="validFrom" type="xsd:int" nillable="true"/>
+                    <xsd:element name="validUntil" type="xsd:int" nillable="true"/>
+                    <xsd:element name="futureRecord" type="tns:ZoneRecordTXT" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfZoneRecordTXT">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:ZoneRecordTXT[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ZoneRecordCAA">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="zone" type="tns:Zone" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="flag" type="xsd:int" nillable="true"/>
+                    <xsd:element name="tag" type="xsd:string" nillable="true"/>
+                    <xsd:element name="value" type="xsd:string" nillable="true"/>
+                    <xsd:element name="validFrom" type="xsd:int" nillable="true"/>
+                    <xsd:element name="validUntil" type="xsd:int" nillable="true"/>
+                    <xsd:element name="futureRecord" type="tns:ZoneRecordA" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfZoneRecordCAA">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:ZoneRecordCAA[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ZoneRecordNS">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="zone" type="tns:Zone" nillable="true"/>
+                    <xsd:element name="ownername" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="targetname" type="xsd:string" nillable="true"/>
+                    <xsd:element name="validFrom" type="xsd:int" nillable="true"/>
+                    <xsd:element name="validUntil" type="xsd:int" nillable="true"/>
+                    <xsd:element name="futureRecord" type="tns:ZoneRecordNS" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfZoneRecordNS">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:ZoneRecordNS[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ZoneKeyInfo">
+                <xsd:all>
+                    <xsd:element name="keyTag" type="xsd:int" nillable="true"/>
+                    <xsd:element name="algorithm" type="xsd:int" nillable="true"/>
+                    <xsd:element name="digestType" type="xsd:int" nillable="true"/>
+                    <xsd:element name="digest" type="xsd:string" nillable="true"/>
+                    <xsd:element name="flags" type="xsd:int" nillable="true"/>
+                    <xsd:element name="protocol" type="xsd:int"/>
+                    <xsd:element name="pubKey" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfZoneKeyInfo">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:ZoneKeyInfo[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="Zone">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="email" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="serial" type="xsd:int" nillable="true"/>
+                    <xsd:element name="nameserver" type="xsd:string" nillable="true"/>
+                    <xsd:element name="template" type="tns:Template" nillable="true"/>
+                    <xsd:element name="recordsa" type="tns:ArrayOfZoneRecordA"/>
+                    <xsd:element name="recordsaaaa" type="tns:ArrayOfZoneRecordAAAA"/>
+                    <xsd:element name="recordscname" type="tns:ArrayOfZoneRecordCNAME"/>
+                    <xsd:element name="recordsmx" type="tns:ArrayOfZoneRecordMX"/>
+                    <xsd:element name="recordsptr" type="tns:ArrayOfZoneRecordPTR"/>
+                    <xsd:element name="recordsspf" type="tns:ArrayOfZoneRecordSPF"/>
+                    <xsd:element name="recordssrv" type="tns:ArrayOfZoneRecordSRV"/>
+                    <xsd:element name="recordstxt" type="tns:ArrayOfZoneRecordTXT"/>
+                    <xsd:element name="recordscaa" type="tns:ArrayOfZoneRecordCAA"/>
+                    <xsd:element name="recordsns" type="tns:ArrayOfZoneRecordNS"/>
+                    <xsd:element name="dnssec" type="xsd:boolean" nillable="true"/>
+                    <xsd:element name="keyinfos" type="tns:ArrayOfZoneKeyInfo" nillable="true"/>
+                    <xsd:element name="dnssecemail" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="QueryZone">
+                <xsd:all>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfQueryZone">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:QueryZone[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="QueryZoneCollection">
+                <xsd:all>
+                    <xsd:element name="sOrder" type="xsd:string" nillable="true"/>
+                    <xsd:element name="iLimit" type="xsd:int" nillable="true"/>
+                    <xsd:element name="iOffset" type="xsd:int" nillable="true"/>
+                    <xsd:element name="aQueries" type="tns:ArrayOfQueryZone"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfZone">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:Zone[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="QueryZoneResult">
+                <xsd:all>
+                    <xsd:element name="zones" type="tns:ArrayOfZone"/>
+                    <xsd:element name="total" type="xsd:int" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ZoneRecordCollection">
+                <xsd:all>
+                    <xsd:element name="zoneid" type="xsd:int" nillable="true"/>
+                    <xsd:element name="zonename" type="xsd:string" nillable="true"/>
+                    <xsd:element name="recordsa" type="tns:ArrayOfZoneRecordA" nillable="true"/>
+                    <xsd:element name="recordsaaaa" type="tns:ArrayOfZoneRecordAAAA" nillable="true"/>
+                    <xsd:element name="recordscname" type="tns:ArrayOfZoneRecordCNAME" nillable="true"/>
+                    <xsd:element name="recordsmx" type="tns:ArrayOfZoneRecordMX" nillable="true"/>
+                    <xsd:element name="recordsns" type="tns:ArrayOfZoneRecordNS" nillable="true"/>
+                    <xsd:element name="recordsptr" type="tns:ArrayOfZoneRecordPTR" nillable="true"/>
+                    <xsd:element name="recordsspf" type="tns:ArrayOfZoneRecordSPF" nillable="true"/>
+                    <xsd:element name="recordssrv" type="tns:ArrayOfZoneRecordSRV" nillable="true"/>
+                    <xsd:element name="recordstxt" type="tns:ArrayOfZoneRecordTXT" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="TemplateRecordCollection">
+                <xsd:all>
+                    <xsd:element name="templateid" type="xsd:int" nillable="true"/>
+                    <xsd:element name="recordsa" type="tns:ArrayOfTemplateRecordA" nillable="true"/>
+                    <xsd:element name="recordsaaaa" type="tns:ArrayOfTemplateRecordAAAA" nillable="true"/>
+                    <xsd:element name="recordscname" type="tns:ArrayOfTemplateRecordCNAME" nillable="true"/>
+                    <xsd:element name="recordsmx" type="tns:ArrayOfTemplateRecordMX" nillable="true"/>
+                    <xsd:element name="recordsns" type="tns:ArrayOfTemplateRecordNS" nillable="true"/>
+                    <xsd:element name="recordsptr" type="tns:ArrayOfTemplateRecordPTR" nillable="true"/>
+                    <xsd:element name="recordsspf" type="tns:ArrayOfTemplateRecordSPF" nillable="true"/>
+                    <xsd:element name="recordssrv" type="tns:ArrayOfTemplateRecordSRV" nillable="true"/>
+                    <xsd:element name="recordstxt" type="tns:ArrayOfTemplateRecordTXT" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfTemplate">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:Template[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="NameserverSet">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="ns1" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ns2" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ns3" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ns4" type="xsd:string" nillable="true"/>
+                    <xsd:element name="isMain" type="xsd:boolean" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfNameserverSet">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:NameserverSet[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="User">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="blocked" type="xsd:boolean" nillable="true"/>
+                    <xsd:element name="email" type="xsd:string" nillable="true"/>
+                    <xsd:element name="maxzones" type="xsd:int" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="username" type="xsd:string" nillable="true"/>
+                    <xsd:element name="password" type="xsd:string" nillable="true"/>
+                    <xsd:element name="roles" type="soap-enc:Array"/>
+                    <xsd:element name="usedzones" type="xsd:int" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="QueryUser">
+                <xsd:all>
+                    <xsd:element name="iLimit" type="xsd:int" nillable="true"/>
+                    <xsd:element name="iOffset" type="xsd:int" nillable="true"/>
+                    <xsd:element name="sSearch" type="xsd:string" nillable="true"/>
+                    <xsd:element name="bBlocked" type="xsd:boolean"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfUser">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:User[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="QueryUserResult">
+                <xsd:all>
+                    <xsd:element name="users" type="tns:ArrayOfUser"/>
+                    <xsd:element name="total" type="xsd:int" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ZoneHistoryMeta">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="created" type="xsd:int" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="ArrayOfZoneHistoryMeta">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:ZoneHistoryMeta[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ZoneHistory">
+                <xsd:all>
+                    <xsd:element name="id" type="xsd:int" nillable="true"/>
+                    <xsd:element name="created" type="xsd:int" nillable="true"/>
+                    <xsd:element name="name" type="xsd:string" nillable="true"/>
+                    <xsd:element name="email" type="xsd:string" nillable="true"/>
+                    <xsd:element name="ttl" type="xsd:int" nillable="true"/>
+                    <xsd:element name="nameserver" type="xsd:string" nillable="true"/>
+                    <xsd:element name="template" type="xsd:int" nillable="true"/>
+                    <xsd:element name="recordsa" type="tns:ArrayOfZoneRecordA"/>
+                    <xsd:element name="recordsaaaa" type="tns:ArrayOfZoneRecordAAAA"/>
+                    <xsd:element name="recordscname" type="tns:ArrayOfZoneRecordCNAME"/>
+                    <xsd:element name="recordsmx" type="tns:ArrayOfZoneRecordMX"/>
+                    <xsd:element name="recordsptr" type="tns:ArrayOfZoneRecordPTR"/>
+                    <xsd:element name="recordsspf" type="tns:ArrayOfZoneRecordSPF"/>
+                    <xsd:element name="recordssrv" type="tns:ArrayOfZoneRecordSRV"/>
+                    <xsd:element name="recordstxt" type="tns:ArrayOfZoneRecordTXT"/>
+                    <xsd:element name="recordscaa" type="tns:ArrayOfZoneRecordTXT"/>
+                    <xsd:element name="recordsns" type="tns:ArrayOfZoneRecordNS"/>
+                </xsd:all>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <portType name="APIPort">
+        <operation name="getServerVersion">
+            <documentation>getServerVersion</documentation>
+            <input message="tns:getServerVersionIn"/>
+            <output message="tns:getServerVersionOut"/>
+        </operation>
+        <operation name="authenticate">
+            <documentation>authenticate</documentation>
+            <input message="tns:authenticateIn"/>
+            <output message="tns:authenticateOut"/>
+        </operation>
+        <operation name="addZone">
+            <documentation>addZone</documentation>
+            <input message="tns:addZoneIn"/>
+            <output message="tns:addZoneOut"/>
+        </operation>
+        <operation name="getZone">
+            <documentation>getZone</documentation>
+            <input message="tns:getZoneIn"/>
+            <output message="tns:getZoneOut"/>
+        </operation>
+        <operation name="updateZone">
+            <documentation>updateZone</documentation>
+            <input message="tns:updateZoneIn"/>
+            <output message="tns:updateZoneOut"/>
+        </operation>
+        <operation name="deleteZone">
+            <documentation>deleteZone</documentation>
+            <input message="tns:deleteZoneIn"/>
+            <output message="tns:deleteZoneOut"/>
+        </operation>
+        <operation name="searchZone">
+            <documentation>searchZone</documentation>
+            <input message="tns:searchZoneIn"/>
+            <output message="tns:searchZoneOut"/>
+        </operation>
+        <operation name="searchZones">
+            <documentation>searchZones</documentation>
+            <input message="tns:searchZonesIn"/>
+            <output message="tns:searchZonesOut"/>
+        </operation>
+        <operation name="moveZone">
+            <documentation>moveZone</documentation>
+            <input message="tns:moveZoneIn"/>
+            <output message="tns:moveZoneOut"/>
+        </operation>
+        <operation name="addRecords">
+            <documentation>addRecords</documentation>
+            <input message="tns:addRecordsIn"/>
+            <output message="tns:addRecordsOut"/>
+        </operation>
+        <operation name="getRecord">
+            <documentation>getRecord</documentation>
+            <input message="tns:getRecordIn"/>
+            <output message="tns:getRecordOut"/>
+        </operation>
+        <operation name="updateRecords">
+            <documentation>updateRecords</documentation>
+            <input message="tns:updateRecordsIn"/>
+            <output message="tns:updateRecordsOut"/>
+        </operation>
+        <operation name="deleteRecord">
+            <documentation>deleteRecord</documentation>
+            <input message="tns:deleteRecordIn"/>
+            <output message="tns:deleteRecordOut"/>
+        </operation>
+        <operation name="addTemplate">
+            <documentation>addTemplate</documentation>
+            <input message="tns:addTemplateIn"/>
+            <output message="tns:addTemplateOut"/>
+        </operation>
+        <operation name="updateTemplate">
+            <documentation>updateTemplate</documentation>
+            <input message="tns:updateTemplateIn"/>
+            <output message="tns:updateTemplateOut"/>
+        </operation>
+        <operation name="addTemplateRecords">
+            <documentation>addTemplateRecords</documentation>
+            <input message="tns:addTemplateRecordsIn"/>
+            <output message="tns:addTemplateRecordsOut"/>
+        </operation>
+        <operation name="updateTemplateRecords">
+            <documentation>updateTemplateRecords</documentation>
+            <input message="tns:updateTemplateRecordsIn"/>
+            <output message="tns:updateTemplateRecordsOut"/>
+        </operation>
+        <operation name="getTemplate">
+            <documentation>getTemplate</documentation>
+            <input message="tns:getTemplateIn"/>
+            <output message="tns:getTemplateOut"/>
+        </operation>
+        <operation name="deleteTemplate">
+            <documentation>deleteTemplate</documentation>
+            <input message="tns:deleteTemplateIn"/>
+            <output message="tns:deleteTemplateOut"/>
+        </operation>
+        <operation name="getTemplateRecord">
+            <documentation>getTemplateRecord</documentation>
+            <input message="tns:getTemplateRecordIn"/>
+            <output message="tns:getTemplateRecordOut"/>
+        </operation>
+        <operation name="deleteTemplateRecord">
+            <documentation>deleteTemplateRecord</documentation>
+            <input message="tns:deleteTemplateRecordIn"/>
+            <output message="tns:deleteTemplateRecordOut"/>
+        </operation>
+        <operation name="getTemplates">
+            <documentation>getTemplates</documentation>
+            <input message="tns:getTemplatesIn"/>
+            <output message="tns:getTemplatesOut"/>
+        </operation>
+        <operation name="addNameserverSet">
+            <documentation>addNameserverSet</documentation>
+            <input message="tns:addNameserverSetIn"/>
+            <output message="tns:addNameserverSetOut"/>
+        </operation>
+        <operation name="getNameserverSet">
+            <documentation>getNameserverSet</documentation>
+            <input message="tns:getNameserverSetIn"/>
+            <output message="tns:getNameserverSetOut"/>
+        </operation>
+        <operation name="getNameserverSets">
+            <documentation>getNameserverSets</documentation>
+            <input message="tns:getNameserverSetsIn"/>
+            <output message="tns:getNameserverSetsOut"/>
+        </operation>
+        <operation name="updateNameserverSet">
+            <documentation>updateNameserverSet</documentation>
+            <input message="tns:updateNameserverSetIn"/>
+            <output message="tns:updateNameserverSetOut"/>
+        </operation>
+        <operation name="deleteNameserverSet">
+            <documentation>deleteNameserverSet</documentation>
+            <input message="tns:deleteNameserverSetIn"/>
+            <output message="tns:deleteNameserverSetOut"/>
+        </operation>
+        <operation name="addUser">
+            <documentation>addUser</documentation>
+            <input message="tns:addUserIn"/>
+            <output message="tns:addUserOut"/>
+        </operation>
+        <operation name="getUser">
+            <documentation>getUser</documentation>
+            <input message="tns:getUserIn"/>
+            <output message="tns:getUserOut"/>
+        </operation>
+        <operation name="getUserByID">
+            <documentation>getUserByID</documentation>
+            <input message="tns:getUserByIDIn"/>
+            <output message="tns:getUserByIDOut"/>
+        </operation>
+        <operation name="updateUser">
+            <documentation>updateUser</documentation>
+            <input message="tns:updateUserIn"/>
+            <output message="tns:updateUserOut"/>
+        </operation>
+        <operation name="deleteUserByID">
+            <documentation>deleteUserByID</documentation>
+            <input message="tns:deleteUserByIDIn"/>
+            <output message="tns:deleteUserByIDOut"/>
+        </operation>
+        <operation name="deleteUser">
+            <documentation>deleteUser</documentation>
+            <input message="tns:deleteUserIn"/>
+            <output message="tns:deleteUserOut"/>
+        </operation>
+        <operation name="getUsers">
+            <documentation>getUsers</documentation>
+            <input message="tns:getUsersIn"/>
+            <output message="tns:getUsersOut"/>
+        </operation>
+        <operation name="getNumberOfZones">
+            <documentation>getNumberOfZones</documentation>
+            <input message="tns:getNumberOfZonesIn"/>
+            <output message="tns:getNumberOfZonesOut"/>
+        </operation>
+        <operation name="changeIP">
+            <documentation>changeIP</documentation>
+            <input message="tns:changeIPIn"/>
+            <output message="tns:changeIPOut"/>
+        </operation>
+        <operation name="changeTTL">
+            <documentation>changeTTL</documentation>
+            <input message="tns:changeTTLIn"/>
+            <output message="tns:changeTTLOut"/>
+        </operation>
+        <operation name="getZoneHistories">
+            <documentation>getZoneHistories</documentation>
+            <input message="tns:getZoneHistoriesIn"/>
+            <output message="tns:getZoneHistoriesOut"/>
+        </operation>
+        <operation name="getZoneHistory">
+            <documentation>getZoneHistory</documentation>
+            <input message="tns:getZoneHistoryIn"/>
+            <output message="tns:getZoneHistoryOut"/>
+        </operation>
+    </portType>
+    <binding name="APIBinding" type="tns:APIPort">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="getServerVersion">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#getServerVersion"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="authenticate">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#authenticate"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="addZone">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#addZone"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="getZone">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#getZone"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="updateZone">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#updateZone"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="deleteZone">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#deleteZone"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="searchZone">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#searchZone"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="searchZones">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#searchZones"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="moveZone">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#moveZone"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="addRecords">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#addRecords"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="getRecord">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#getRecord"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="updateRecords">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#updateRecords"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="deleteRecord">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#deleteRecord"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="addTemplate">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#addTemplate"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="updateTemplate">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#updateTemplate"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="addTemplateRecords">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#addTemplateRecords"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="updateTemplateRecords">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#updateTemplateRecords"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="getTemplate">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#getTemplate"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="deleteTemplate">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#deleteTemplate"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="getTemplateRecord">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#getTemplateRecord"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="deleteTemplateRecord">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#deleteTemplateRecord"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="getTemplates">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#getTemplates"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="addNameserverSet">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#addNameserverSet"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="getNameserverSet">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#getNameserverSet"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="getNameserverSets">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#getNameserverSets"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="updateNameserverSet">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#updateNameserverSet"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="deleteNameserverSet">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#deleteNameserverSet"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="addUser">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#addUser"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="getUser">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#getUser"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="getUserByID">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#getUserByID"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="updateUser">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#updateUser"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="deleteUserByID">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#deleteUserByID"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="deleteUser">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#deleteUser"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="getUsers">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#getUsers"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="getNumberOfZones">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#getNumberOfZones"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="changeIP">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#changeIP"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="changeTTL">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#changeTTL"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="getZoneHistories">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#getZoneHistories"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+        <operation name="getZoneHistory">
+            <soap:operation soapAction="https://ns1.hosttech.eu/soap#getZoneHistory"/>
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://ns1.hosttech.eu/soap"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="APIService">
+        <port name="APIPort" binding="tns:APIBinding">
+            <soap:address location="https://ns1.hosttech.eu/soap"/>
+        </port>
+    </service>
+    <message name="getServerVersionIn"/>
+    <message name="getServerVersionOut">
+        <part name="return" type="xsd:string"/>
+    </message>
+    <message name="authenticateIn">
+        <part name="sUsername" type="xsd:string"/>
+        <part name="sPassword" type="xsd:string"/>
+    </message>
+    <message name="authenticateOut">
+        <part name="return" type="xsd:string"/>
+    </message>
+    <message name="addZoneIn">
+        <part name="oZone" type="tns:Zone"/>
+        <part name="sUsername" type="xsd:string"/>
+    </message>
+    <message name="addZoneOut">
+        <part name="return" type="xsd:int"/>
+    </message>
+    <message name="getZoneIn">
+        <part name="iZoneID" type="xsd:int"/>
+    </message>
+    <message name="getZoneOut">
+        <part name="return" type="tns:Zone"/>
+    </message>
+    <message name="updateZoneIn">
+        <part name="oZone" type="tns:Zone"/>
+    </message>
+    <message name="updateZoneOut">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="deleteZoneIn">
+        <part name="iZoneID" type="xsd:int"/>
+    </message>
+    <message name="deleteZoneOut">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="searchZoneIn">
+        <part name="sZoneName" type="xsd:string"/>
+    </message>
+    <message name="searchZoneOut">
+        <part name="return" type="tns:Zone"/>
+    </message>
+    <message name="searchZonesIn">
+        <part name="oCollection" type="tns:QueryZoneCollection"/>
+        <part name="sUsername" type="xsd:string"/>
+    </message>
+    <message name="searchZonesOut">
+        <part name="return" type="tns:QueryZoneResult"/>
+    </message>
+    <message name="moveZoneIn">
+        <part name="iZoneID" type="xsd:int"/>
+        <part name="sUsername" type="xsd:string"/>
+    </message>
+    <message name="moveZoneOut">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="addRecordsIn">
+        <part name="oCollection" type="tns:ZoneRecordCollection"/>
+    </message>
+    <message name="addRecordsOut">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="getRecordIn">
+        <part name="iRecordID" type="xsd:int"/>
+    </message>
+    <message name="getRecordOut">
+        <part name="return" type="tns:ZoneRecordCollection"/>
+    </message>
+    <message name="updateRecordsIn">
+        <part name="oCollection" type="tns:ZoneRecordCollection"/>
+    </message>
+    <message name="updateRecordsOut">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="deleteRecordIn">
+        <part name="iRecordID" type="xsd:int"/>
+    </message>
+    <message name="deleteRecordOut">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="addTemplateIn">
+        <part name="oTemplate" type="tns:Template"/>
+    </message>
+    <message name="addTemplateOut">
+        <part name="return" type="xsd:int"/>
+    </message>
+    <message name="updateTemplateIn">
+        <part name="oTemplate" type="tns:Template"/>
+    </message>
+    <message name="updateTemplateOut">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="addTemplateRecordsIn">
+        <part name="oCollection" type="tns:TemplateRecordCollection"/>
+    </message>
+    <message name="addTemplateRecordsOut">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="updateTemplateRecordsIn">
+        <part name="oCollection" type="tns:TemplateRecordCollection"/>
+    </message>
+    <message name="updateTemplateRecordsOut">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="getTemplateIn">
+        <part name="iTemplateID" type="xsd:int"/>
+    </message>
+    <message name="getTemplateOut">
+        <part name="return" type="tns:Template"/>
+    </message>
+    <message name="deleteTemplateIn">
+        <part name="iTemplateID" type="xsd:int"/>
+    </message>
+    <message name="deleteTemplateOut">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="getTemplateRecordIn">
+        <part name="iTemplateRecordID" type="xsd:int"/>
+    </message>
+    <message name="getTemplateRecordOut">
+        <part name="return" type="tns:TemplateRecordCollection"/>
+    </message>
+    <message name="deleteTemplateRecordIn">
+        <part name="iTemplateRecordID" type="xsd:int"/>
+    </message>
+    <message name="deleteTemplateRecordOut">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="getTemplatesIn">
+        <part name="sUsername" type="xsd:string"/>
+    </message>
+    <message name="getTemplatesOut">
+        <part name="return" type="tns:ArrayOfTemplate"/>
+    </message>
+    <message name="addNameserverSetIn">
+        <part name="oNameserverSet" type="tns:NameserverSet"/>
+        <part name="sUsername" type="xsd:string"/>
+    </message>
+    <message name="addNameserverSetOut">
+        <part name="return" type="xsd:int"/>
+    </message>
+    <message name="getNameserverSetIn">
+        <part name="iID" type="xsd:int"/>
+    </message>
+    <message name="getNameserverSetOut">
+        <part name="return" type="tns:NameserverSet"/>
+    </message>
+    <message name="getNameserverSetsIn">
+        <part name="sUsername" type="xsd:string"/>
+    </message>
+    <message name="getNameserverSetsOut">
+        <part name="return" type="tns:ArrayOfNameserverSet"/>
+    </message>
+    <message name="updateNameserverSetIn">
+        <part name="oNameserverSet" type="tns:NameserverSet"/>
+    </message>
+    <message name="updateNameserverSetOut">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="deleteNameserverSetIn">
+        <part name="iNameserverSetID" type="xsd:int"/>
+    </message>
+    <message name="deleteNameserverSetOut">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="addUserIn">
+        <part name="oUser" type="tns:User"/>
+    </message>
+    <message name="addUserOut">
+        <part name="return" type="xsd:int"/>
+    </message>
+    <message name="getUserIn">
+        <part name="sUsername" type="xsd:string"/>
+    </message>
+    <message name="getUserOut">
+        <part name="return" type="tns:User"/>
+    </message>
+    <message name="getUserByIDIn">
+        <part name="iUserID" type="xsd:int"/>
+    </message>
+    <message name="getUserByIDOut">
+        <part name="return" type="tns:User"/>
+    </message>
+    <message name="updateUserIn">
+        <part name="oUser" type="tns:User"/>
+    </message>
+    <message name="updateUserOut">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="deleteUserByIDIn">
+        <part name="iID" type="xsd:int"/>
+    </message>
+    <message name="deleteUserByIDOut">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="deleteUserIn">
+        <part name="sUsername" type="xsd:string"/>
+    </message>
+    <message name="deleteUserOut">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="getUsersIn">
+        <part name="oQueryUser" type="tns:QueryUser"/>
+    </message>
+    <message name="getUsersOut">
+        <part name="return" type="tns:QueryUserResult"/>
+    </message>
+    <message name="getNumberOfZonesIn">
+        <part name="sUsername" type="xsd:string"/>
+    </message>
+    <message name="getNumberOfZonesOut">
+        <part name="return" type="xsd:int"/>
+    </message>
+    <message name="changeIPIn">
+        <part name="sCurrentIP" type="xsd:string"/>
+        <part name="sNewIP" type="xsd:string"/>
+    </message>
+    <message name="changeIPOut">
+        <part name="return" type="xsd:int"/>
+    </message>
+    <message name="changeTTLIn">
+        <part name="sIP" type="xsd:string"/>
+        <part name="iTTL" type="xsd:int"/>
+    </message>
+    <message name="changeTTLOut">
+        <part name="return" type="xsd:int"/>
+    </message>
+    <message name="getZoneHistoriesIn">
+        <part name="sZoneName" type="xsd:string"/>
+    </message>
+    <message name="getZoneHistoriesOut">
+        <part name="return" type="tns:ArrayOfZoneHistoryMeta"/>
+    </message>
+    <message name="getZoneHistoryIn">
+        <part name="iZoneHistoryID" type="xsd:int"/>
+    </message>
+    <message name="getZoneHistoryOut">
+        <part name="return" type="tns:ZoneHistory"/>
+    </message>
+</definitions>
