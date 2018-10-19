@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+    xmlns:soap="https://ns1.hosttech.eu/soap">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <soap:authenticate soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+            <sUsername xsi:type="xsd:string">WELLKNOWNUSERNAME</sUsername>
+            <sPassword xsi:type="xsd:string">WELLKNOWNPASSWORD</sPassword>
+        </soap:authenticate>
+    </soapenv:Body>
+</soapenv:Envelope>

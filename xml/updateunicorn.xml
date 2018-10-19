@@ -1,0 +1,32 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="https://ns1.hosttech.eu/soap" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:updateRecords soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <oCollection xsi:type="soap:ZoneRecordCollection">
+            <!--You may enter the following 11 items in any order-->
+            <zoneid xsi:type="xsd:int">184727</zoneid>
+            <zonename xsi:type="xsd:string"></zonename>
+            <recordsa xsi:type="soap:ArrayOfZoneRecordA" soapenc:arrayType="soap:ZoneRecordA[1]">
+              <item xsi:type="ns1:ZoneRecordA">
+                  <id xsi:type="xsd:int">1483686</id>
+                  <zone xsi:nil="true"/>
+                  <name xsi:type="xsd:string">unicorn</name>
+                  <ttl xsi:nil="true"/>
+                  <ipv4 xsi:type="xsd:string">WELLKNOWNIP1</ipv4>
+                  <validFrom xsi:nil="true"/>
+                  <validUntil xsi:nil="true"/>
+                  <futureRecord xsi:nil="true"/>
+               </item>
+            </recordsa>
+            <recordsaaaa xsi:type="soap:ArrayOfZoneRecordAAAA" soapenc:arrayType="soap:ZoneRecordAAAA[]"/>
+            <recordscname xsi:type="soap:ArrayOfZoneRecordCNAME" soapenc:arrayType="soap:ZoneRecordCNAME[]"/>
+            <recordsmx xsi:type="soap:ArrayOfZoneRecordMX" soapenc:arrayType="soap:ZoneRecordMX[]"/>
+            <recordsns xsi:type="soap:ArrayOfZoneRecordNS" soapenc:arrayType="soap:ZoneRecordNS[]"/>
+            <recordsptr xsi:type="soap:ArrayOfZoneRecordPTR" soapenc:arrayType="soap:ZoneRecordPTR[]"/>
+            <recordsspf xsi:type="soap:ArrayOfZoneRecordSPF" soapenc:arrayType="soap:ZoneRecordSPF[]"/>
+            <recordssrv xsi:type="soap:ArrayOfZoneRecordSRV" soapenc:arrayType="soap:ZoneRecordSRV[]"/>
+            <recordstxt xsi:type="soap:ArrayOfZoneRecordTXT" soapenc:arrayType="soap:ZoneRecordTXT[]"/>
+         </oCollection>
+      </soap:updateRecords>
+   </soapenv:Body>
+</soapenv:Envelope>
