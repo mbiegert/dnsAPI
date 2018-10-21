@@ -1,8 +1,0 @@
-Authentication:
-  - first call the authenticate method with username and password, this returns a
-    string element which is to be used as a session id.
-  - use this string as an additional header:
-    "Cookie: PHPSESSID=<string>"
-
-zone id of mbiegert.ch: 184727
-zone id of test.mbiegert2.ch: 203278

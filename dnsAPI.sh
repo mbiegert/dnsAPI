@@ -26,10 +26,9 @@ get_auth_cookie() {
     # read credentials
     if [ ! -f "credentials.sh" ]; then
         echo "Could not find credentials file." 1>&2
-        echo "Please make sure "\
-            "there is a file \"credentials.sh\" in the current working "\
-            "directory providing the variables \$username and "\
-            "\$password." 1>&2
+        echo "Please make sure there is a file \"credentials.sh\" "\
+            "in the current working directory providing the "\
+            "variables \$username and \$password." 1>&2
         echo "Exiting..." 1>&2
         exit
     fi
